@@ -99,6 +99,9 @@
 /****************************USER LIST******************************/
 .user_list_head{
 	position: relative;
+	text-transform: capitalize;
+	font-size: 24px;
+	color: #000;
 	width: 60px;
 	height: 35px;
 	top: 20px;
@@ -111,3 +114,17 @@
 	width: 500px;
 	border: 1px solid yellow;
 }
+
+.user_row{
+	height: 35px;
+	font-size: 24px;
+	color: #3E3E3E;
+	text-transform: capitalize;
+	margin-top: 1px;
+	border: 1px dashed;
+}
+
+.ur_name{
+	width: 300px;
+}
+

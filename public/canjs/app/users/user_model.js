@@ -1,1 +1,3 @@
-can.Model("App.UserModel", {},{});
+can.Model("App.UserModel", {
+	create  : 'POST /users'
+},{});
