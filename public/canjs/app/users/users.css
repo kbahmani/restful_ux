@@ -1,0 +1,30 @@
+.header{
+	width: 290px;
+	height: 30px;
+	border: 1px solid red;
+}
+
+
+.user_form{
+	position: relative;
+	width: 420px;
+	height: 160px;
+	top: 20px;
+	border: 1px solid green;
+}
+
+
+.user_list_head{
+	position: relative;
+	width: 60px;
+	height: 35px;
+	top: 20px;
+	border: 1px solid black;
+}
+
+.user_list{
+	position: relative;
+	top: 20px;
+	width: 500px;
+	border: 1px solid yellow;
+}

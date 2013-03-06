@@ -5,7 +5,8 @@ steal(
     'global/lib/jquery-ui-1.8.15.min.js',
     'global/lib/jquerypp/jquery.cookie.js',   // load jquery++ cookie
     'global/lib/jquerypp/jquery.form_params.js',
-    'global/css/jquery-ui-1.8.15.custom.css'
+    'global/css/jquery-ui-1.8.15.custom.css',
+		'../app/users/users.js'
 )
 .then(function(){
     // restore the globe states from sessionStorage
@@ -40,6 +41,9 @@ steal(
             var widget = data['widget'];
             var sub = data['sub'];
             var self = this;
+						if(widget === 'users') {
+                var User = new App.UsersCtrl("#contents");
+            }
             app_state.attr('route', {'widget': widget, 'sub': sub});
         }
     })

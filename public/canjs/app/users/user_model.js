@@ -1,0 +1,1 @@
+can.Model("App.UserModel", {},{});
