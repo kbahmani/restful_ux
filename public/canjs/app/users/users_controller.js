@@ -16,11 +16,7 @@ can.Control("App.UsersCtrl",{},
 		panel.find('.last_name input').val('');
 		panel.find('.email input').val('');
 		user.save(function( user ) {
-			var html = 
-			"<div class='user_row'>" +
-			"<div class='ur_name'>&#8226;&nbsp;<span>" + user.name +"</span></div>" +
-			"</div>";
-		  self.element.find('.user_list').append(html)
+			self.element.find('.user_list').append(can.view('../app/users/ejs/user_row.ejs', {data: user}))
 		});
 	}
 });
