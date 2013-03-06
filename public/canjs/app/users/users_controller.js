@@ -37,5 +37,11 @@ can.Control("App.UsersCtrl",{},
 		user.destroy(function( user ) {
 		   user_row.remove();
 		});
+	},
+	'.ur_edit click': function(ui, event){
+		var user_row = ui.parent();
+		var user = user_row.data('model');
+		user_row.after(can.view('../app/users/ejs/user_edit.ejs', {data: user}));
+		user_row.remove();
 	}
 });
