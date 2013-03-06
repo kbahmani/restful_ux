@@ -3,20 +3,32 @@ can.Control("App.UsersCtrl",{},
 	init: function(element) { 
 		this.container = this.element;
 		this.element.html(can.view('../app/users/ejs/user_layout.ejs'));
+		this.init_user_list();
+	},
+	init_user_list: function(){
+		var panel = this.element.find('.user_list');
+		var User = App.UserModel;
+		User.findAll( {}, function( list ) {
+			for(var i=0;i<list.length;i++){
+				var html = can.view('../app/users/ejs/user_row.ejs', {data: list[i]});
+				panel.append(html);
+			}
+		});
 	},
 	'.add_user_btn click': function(ui, event){
-		var self = this;
+		var panel = this.element.find('.user_list');
 		var User = App.UserModel;
-		var panel = ui.parent();
-		var name = panel.find('.first_name input').val();
-		var family = panel.find('.last_name input').val();
-		var email = panel.find('.email input').val();
+		var form = ui.parent();
+		var name = form.find('.first_name input').val();
+		var family = form.find('.last_name input').val();
+		var email = form.find('.email input').val();
 		var user = new User( { name: name, family: family, email: email } );
-		panel.find('.first_name input').val('');
-		panel.find('.last_name input').val('');
-		panel.find('.email input').val('');
+		form.find('.first_name input').val('');
+		form.find('.last_name input').val('');
+		form.find('.email input').val('');
 		user.save(function( user ) {
-			self.element.find('.user_list').append(can.view('../app/users/ejs/user_row.ejs', {data: user}))
+			var html = can.view('../app/users/ejs/user_row.ejs', {data: user});
+			panel.append(html);
 		});
 	}
 });
