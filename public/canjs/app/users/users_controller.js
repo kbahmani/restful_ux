@@ -30,5 +30,12 @@ can.Control("App.UsersCtrl",{},
 			var html = can.view('../app/users/ejs/user_row.ejs', {data: user});
 			panel.append(html);
 		});
+	},
+	'.ur_delete click': function(ui, event){
+		var user_row = ui.parent();
+		var user = user_row.data('model');
+		user.destroy(function( user ) {
+		   user_row.remove();
+		});
 	}
 });
