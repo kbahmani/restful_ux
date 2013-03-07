@@ -15,3 +15,5 @@
 /tmp
 
 .DS_Store
+# ignore rubymine IDE config files
+.idea
