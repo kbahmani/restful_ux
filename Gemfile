@@ -27,7 +27,7 @@ group :test, :development do
 	gem 'capybara', '~> 1.1.2'
 	gem 'capybara-webkit'
 	gem 'headless', '0.3.1'
-	gem 'rspec-rails', '~> 2.7.0'
+	gem 'rspec-rails', '~> 2.13.0'
 end
 
 # To use ActiveModel has_secure_password
